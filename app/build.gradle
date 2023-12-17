@@ -6,6 +6,11 @@ android {
     namespace 'algonquin.cst2335.chen0872'
     compileSdk 34
 
+    buildFeatures {
+        viewBinding true
+    }
+
+
     defaultConfig {
         applicationId "algonquin.cst2335.chen0872"
         minSdk 22
@@ -22,10 +27,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+
 }
 
 dependencies {
