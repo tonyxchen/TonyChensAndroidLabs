@@ -2,6 +2,7 @@ package algonquin.cst2335.chen0872;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
             String password = et.getText().toString();
             if(checkPasswordComplexity(password)){
                 tv.setText("Your password meets the requirements");
+                Intent nextPage = new Intent(MainActivity.this, ChatRoom.class);
+                startActivity(nextPage);
+
             } else {
                 tv.setText("YOU SHALL NOT PASS!");
             }
