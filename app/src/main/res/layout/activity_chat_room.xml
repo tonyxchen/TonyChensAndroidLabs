@@ -33,7 +33,7 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="@+id/receiveButton"
         app:layout_constraintEnd_toStartOf="@+id/receiveButton"
         app:layout_constraintHorizontal_bias="1.0"
