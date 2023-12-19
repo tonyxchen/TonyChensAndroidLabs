@@ -38,5 +38,10 @@ public class MessageDetailsFragment extends Fragment {
         return binding.getRoot();
 
 
+
+
+
+
     }
+
 }

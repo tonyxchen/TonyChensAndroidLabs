@@ -9,4 +9,14 @@ public class ChatRoomViewModel extends ViewModel {
     public MutableLiveData<ArrayList<ChatMessages>> messages = new MutableLiveData<>();
 
     public MutableLiveData<ChatMessages> selectedMessage = new MutableLiveData< >();
+
+    public int position;
+
+    public void setPosition(int pos){
+        position = pos;
+    }
+
+    public int getPosition() {
+        return position;
+    }
 }
