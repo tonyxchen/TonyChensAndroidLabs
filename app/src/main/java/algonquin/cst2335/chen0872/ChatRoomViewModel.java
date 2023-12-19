@@ -7,4 +7,6 @@ import java.util.ArrayList;
 
 public class ChatRoomViewModel extends ViewModel {
     public MutableLiveData<ArrayList<ChatMessages>> messages = new MutableLiveData<>();
+
+    public MutableLiveData<ChatMessages> selectedMessage = new MutableLiveData< >();
 }

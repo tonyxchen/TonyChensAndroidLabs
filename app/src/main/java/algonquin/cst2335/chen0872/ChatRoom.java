@@ -2,6 +2,8 @@ package algonquin.cst2335.chen0872;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -125,6 +127,17 @@ public class ChatRoom extends AppCompatActivity {
             }
         });
 
+        chatModel.selectedMessage.observe(this, (newMessageValue) -> {
+            MessageDetailsFragment chatFragment = new MessageDetailsFragment(newMessageValue);
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragmentLocation, chatFragment)
+                    .addToBackStack("")
+                    .commit();
+
+            myAdapter.notifyDataSetChanged();
+        });
+
     }
     class MyRowHolder extends RecyclerView.ViewHolder {
 
@@ -135,7 +148,10 @@ public class ChatRoom extends AppCompatActivity {
 
             itemView.setOnClickListener(clk ->{
                 int position = getAbsoluteAdapterPosition();
+                ChatMessages selected = messages.get(position);
 
+                chatModel.selectedMessage.postValue(selected);
+                /*
                 AlertDialog.Builder builder = new AlertDialog.Builder( ChatRoom.this );
                 builder.setMessage("Do you want to delete this message: " +messageText.getText())
                     .setTitle("Question: ")
@@ -156,6 +172,8 @@ public class ChatRoom extends AppCompatActivity {
                     })
                 .setNegativeButton("No",(dialog, cl)->{})
                 .create().show();
+
+                 */
             });
 
             messageText = itemView.findViewById(R.id.message);
