@@ -4,4 +4,7 @@
     <string name="button_message">LOGIN</string>
     <string name="fail">YOU SHALL NOT PASS!</string>
     <string name="pass">Your password meets the requirements</string>
+    <string name="weather_prompt">Type a city here:</string>
+    <string name="type_city">Type city</string>
+    <string name="forecast">GET FORECAST</string>
 </resources>
